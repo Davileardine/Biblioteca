@@ -72,31 +72,3 @@ if __name__ == "__main__":
       case '4':
         print("Até mais!!")
         break
-'''
-  print(Biblioteca.get_livros())
-
-  Biblioteca.emprestar_livro(Arte_da_Guerra, Davi)
-  Biblioteca.emprestar_livro(Principe, Nino)
-
-  print(Biblioteca.get_livros())
-
-  print(Biblioteca.get_emprestimos())
-
-  print('\n')
-  
-  Biblioteca.devolver_livro(Pequeno_principe)
-
-  print('\n')
-
-  print(Biblioteca.get_livros())
-  print(Biblioteca.get_emprestimos())
-
-  print('\n')
-
-  Biblioteca.devolver_livro(Arte_da_Guerra)
-
-  print('\n')
-
-  print(Biblioteca.get_livros())
-  print(Biblioteca.get_emprestimos())
-'''
