@@ -63,12 +63,28 @@ if __name__ == "__main__":
             print("\n".join(map(str,livros)), "\n")
             lv_i = input()
             lv= Biblioteca.get_livro(lv_i)
+            if lv in Biblioteca.vtemprestimos:
+              print(f"O livro '{lv}' não está disponível!")
+              
+
+            lv= Biblioteca.get_livro(lv_i)
             if Biblioteca.emprestar_livro(lv,nm):
               print(f"O livro '{lv_i}' foi alugado com sucesso!")
             else:
               print(f"O livro '{lv_i}' não está disponível!")
-     # case '3':
 
+#TODO: Arrumar case 3 e função devolver livro
+      '''
+      case '3':
+        print("Por favor, insira o livro que deseja devolver:\n")
+        lv_i = input()
+        lv= Biblioteca.get_livro(lv_i)
+        if not lv or not lv.is_disponivel():
+          print("Livro não encontrado!")
+        else:
+          if Biblioteca.devolver_livro(lv):
+            print(f"O livro '{lv_i}' foi devolvido com sucesso!")
+        '''
       case '4':
         print("Até mais!!")
         break

@@ -81,20 +81,17 @@ class Biblioteca:
 
     #print(f"O livro '{livro}' não está disponível!")
 
-  def devolver_livro(self, livro, data_devolucao=datetime.date.today()):
+def devolver_livro(self, livro, data_devolucao=datetime.date.today()):
 
-    for i in range(len(self.vtlivros)):
-      if livro == self.vtlivros[i]:
-        print(f"O livro '{livro.get_name()}' ainda não foi alugado!")
+    if livro in self.vtlivros or livro in self.vtemprestimos:
+
+      if livro in self.vtemprestimos:
+        self.vtemprestimos.pop(self.vtemprestimos.index(livro))
+        livro.set_disponivel(True)
+        print(
+          f"O livro '{livro.get_name()}' foi retornado com sucesso!\nData da devolução {data_devolucao}"
+        )
         return
 
-    print(
-      f"O livro '{livro.get_name()}' foi retornado com sucesso!\nData da devolução {data_devolucao}"
-    )
-    self.vtlivros.append(livro)
-
-    for i in range(len(self.vtemprestimos)):
-
-      if livro.get_name() == self.vtemprestimos[i].get_livro():
-        self.vtemprestimos.pop(i)
-        return
+    print("Livro não encontrado!")
+    return False
